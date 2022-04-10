@@ -237,7 +237,7 @@ func merge(_ left: [Int], _ right: [Int]) -> [Int] {
 }
 
 print("Original array: \(array)")
-print("Merge sorted: \(mergeSort(array: [5, 1, 0, 15, 10, 9, 8]))")
+print("Merge sorted: \(mergeSort(array: array))")
 print("=============")
 
 
@@ -258,7 +258,7 @@ func quickSort(array: [Int]) -> [Int] {
 }
 
 print("Original array: \(array)")
-print("Quick sorted: \(quickSort(array: [5, 1, 0, 15, 10, 9, 8]))")
+print("Quick sorted: \(quickSort(array: array))")
 print("=============")
 
 
@@ -279,11 +279,11 @@ func bucketSort(array: [Int]) -> [Int] {
     
     buckets.enumerated().forEach { index, value in
         guard value > 0 else { return }
-        out.append(index)
+        out.append(contentsOf: [Int](repeating: index, count: value))
     }
     
     return out
 }
 print("Original array: \(array)")
-print("Bucket sorted: \(bucketSort(array: [5, 1, 0, 15, 10, 9, 8]))")
+print("Bucket sorted: \(bucketSort(array: array))")
 print("=============")
